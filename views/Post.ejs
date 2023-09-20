@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Post</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+        }
+
+        .imgPost {
+            width: 50%;
+            box-shadow: 2px 13px 14px royalblue;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            margin: 10px;
+        }
+
+        .MainBox {
+            display: flex;
+            background-color: whitesmoke;
+            padding: 30px;
+        }
+
+        .MainBox p {
+            font-size: 18px;
+            padding: 30px;
+        }
+
+        .mainimg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Btn {
+            width: 200px;
+            padding: 10px;
+            border: none;
+            margin: 10px;
+            background-color: royalblue;
+            outline: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Read Post</h1>
+    <a href="/">
+        <button class="Btn">Back</button>
+    </a>
+
+    <a href="/delete/<%= data.id %>">
+        <button class="Btn">Delete</button>
+    </a>
+
+    <a href="/api/update/<%= data.id%>">
+        <button class="Btn">Update</button>
+    </a>
+
+    <span class="mainimg">
+        <img src=<%=data.img %> alt="photo" class="imgPost">
+    </span>
+    <h1>
+        <%= data.title %>
+    </h1>
+    <span class="MainBox">
+        <p>
+            <%= data.paragraph %>
+        </p>
+    </span>
+</body>
+
+</html>
